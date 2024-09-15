@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentários</title>
+    <style>
+        body{
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        .comentarios-conteiner{
+            width: 50%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px;
+            border-radius: 10px;
+        }
+        h2{
+            text-align: center;
+        }
+        button{
+            padding: 10px 15px;
+            color: white;
+            background-color: black;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .comentario strong{
+            display: block;
+            margin-bottom: 10px;
+        }
+        textarea{
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid  #ccc;
+            margin-bottom: 5px;
+        }
+        button:hover{
+            background-color: blue;
+        }
+        .erro-coment{
+            color: purple;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .usuario-atual {
+            background-color: gold;
+            border: 1px solid gold;
+        }
+        .comentario{
+            background-color: gray;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="comentarios-conteiner">
+        <h2>Aba de comentários</h2>
+        <div id="comentarios">
+        
+        </div>
+    <textarea id="area-comentarios" rows="4" placeholder="Comente"></textarea>
+    <div id="erro" class="erro-coment"></div>
+        <button onclick="addcoment()">Enviar</button>
+    </div>
+    <script src="ex4.js"></script>
+</body>
+</html>
