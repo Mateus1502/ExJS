@@ -1,0 +1,94 @@
+body {
+    font-family:Impact, Haettenschweiler,;
+    font-size: large;
+    margin: 0;
+    padding: 0;
+    background-color: #4d0c04;
+    font-style: italic;
+}
+
+
+
+
+header {
+    background-color: #7e190c;
+    padding: 5px;
+    padding: 0;
+    margin: 0;
+    
+}
+
+nav ul {
+    list-style:none;
+    padding: 2;
+    margin: 2;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 90px;
+    
+}
+
+nav ul li a {
+    color: rgb(255, 120, 9);
+    text-decoration:wavy;
+    font-size:x-large;
+    border-radius: 90px;
+    padding: 20px 30px;
+
+    display: flex;
+    
+}
+
+nav ul li a:hover {
+    background-color: #1e234d;
+}
+
+/* Estilização das seções */
+section {
+    padding: 70px;
+    margin: 50px 0;
+    border: 5px solid #c74a11;
+    background-color: #f4f4f4;
+    text-align: center;
+    font-style: oblique;
+    border-radius: 90px;
+    font-size: 20px;
+}
+
+/* Scroll suave para âncoras */
+html {
+    scroll-behavior: smooth;
+   
+}
+
+#section1{
+background-color: black;
+color:#ddd;
+
+
+}
+
+#section2{
+    background-color: black;
+color:#ddd;
+}
+#section3{
+    background-color: black;
+color:#ddd;
+}
+
+#section4{
+    background-color: black;
+color:#ddd;
+}
+img {
+    width: 500px;
+    height:flex;
+    border-radius: 20px;
+
+  
+}
+h2{
+    
+    font-size: 50px;
+}
