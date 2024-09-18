@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>questão 10</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            margin-bottom: 20px;
+        }
+
+        .form-container input {
+            padding: 8px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        canvas {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Gráfico</h2>
+
+<div class="form-container">
+    <input type="text" id="labelInput" placeholder="Ano (ex: 2010)">
+    <input type="number" id="valueInput" placeholder="Media de idade (ex: 20)">
+    <button onclick="addData()">Adicionar Dados</button>
+</div>
+
+<canvas id="myChart"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [],
+            datasets: [{
+                label: 'Valores Adicionados',
+                data: [],
+                backgroundColor: 'rgba(0, 123, 255, 0.7)',
+                borderColor: 'rgba(0, 123, 255, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    function addData() {
+        const labelInput = document.getElementById('labelInput').value;
+        const valueInput = document.getElementById('valueInput').value;
+
+        if (labelInput !== '' && valueInput !== '') {
+            myChart.data.labels.push(labelInput); 
+            myChart.data.datasets[0].data.push(valueInput);
+
+            myChart.update();
+            document.getElementById('labelInput').value = '';
+            document.getElementById('valueInput').value = '';
+        } else {
+            alert('Por favor, Insira um ano e a media.');
+        }
+    }
+</script>
+
+</body>
+</html>
