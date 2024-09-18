@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasco Lateral Retrátil</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #000;
+            color: #fff;
+            transition: left 0.3s ease;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+            padding: 20px;
+        }
+        .sidebar h1 {
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+        .sidebar a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .sidebar a:hover {
+            color: #ddd;
+        }
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 1.5em;
+            color: #000;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .menu-btn::before {
+            content: '☰';
+        }
+        .content {
+            margin-left: 20px;
+            padding: 20px;
+            flex: 1;
+            transition: margin-left 0.3s ease;
+        }
+        .content.shift {
+            margin-left: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-btn" id="menu-btn"></div>
+    <div class="sidebar" id="sidebar">
+        <h1>Menu</h1>
+        <a href="#">Início</a>
+        <a href="#">Sobre</a>
+        <a href="#">Jogadores</a>
+        <a href="#">Notícias</a>
+        <a href="#">Contato</a>
+    </div>
+    <div class="content" id="content">
+        <h1>VASCO DA GAMA</h1>
+        <p>VIVA O GIGANTE DA COLINA</p>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        const content = document.getElementById('content');
+        let menuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            if (menuOpen) {
+                sidebar.style.left = '-250px';
+                content.classList.remove('shift');
+            } else {
+                sidebar.style.left = '0';
+                content.classList.add('shift');
+            }
+            menuOpen = !menuOpen;
+        });
+    </script>
+</body>
+</html>
